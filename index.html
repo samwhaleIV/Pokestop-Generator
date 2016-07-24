@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Pokestop Generator</title>
+        <link charset="UTF-8" href="style.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <p><input placeholder="Title" maxlength="26" onchange="updateText()" id="title" type="text"></input></p>
+        <p><input placeholder="Description" maxlength="32" onchange="updateText()" id="description" type="text"></input></p>
+        <p>Background: <input onchange="backgroundUpdate()" type="file" id="background" accept="image/png,image/jpeg"></input></p>
+        <p>(Square image recommended)</p>
+        <p>To save, right click on the picture and hit "Save image as..." or something similar.</p>
+        <canvas id="canvas"></canvas>
+    	<script charset="UTF-8" type="text/javascript" src="script.js"></script>
+    </body>
+</html>
