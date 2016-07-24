@@ -2,3 +2,5 @@ Android vs iOS top bar
 support importing more image types rather than just png and jpeg
 Add cropping system for imported image
 Make it look better!!!
+Option for blue or purple Pokestop frame
+Option for Pokestop too far away or try again

@@ -49,22 +49,20 @@ function backgroundUpdate() {
     var file = background.files[0];
     var url = window.URL || window.webkitURL;
     backgroundImage.src = url.createObjectURL(file);
-}
-
-function saveImage() {
-    document.href = canvas.toDataURL();
-}
-
+};
 function updateText() {
     drawFrame();
     drawTexts();
 }
 function drawTexts() {
-    context.font = "bold 40px Calibri";
+    context.font = "40px CarlitoBold";
     context.fillStyle = "#456A6D";
     context.textAlign = "left";
     context.fillText(title.value,textX,titleY,maxTextWidth);
-    context.font = "36px Calibri";
+    context.font = "36px CarlitoRegular";
     context.fillText(description.value,textX,descriptionY,maxTextWidth);
 }
+document.body.onload = function() {
+    updateText(); //in case custom font is still loading or not cached
+};
 frameImage.src = "frame.png";
