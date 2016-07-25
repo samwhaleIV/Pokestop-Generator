@@ -2,10 +2,16 @@ p {
     font-family: "CarlitoRegular";
 }
 .carlitoBold {
-    font-family: "CarlitoBold";  
+    font-family: "CarlitoBold";
 }
 #canvas {
     height: 600px;
+    float: left;
+}
+#settingsAndInfo {
+    width: 320px;
+    float: left;
+    margin-left: 20px;
 }
 @font-face {
     font-family: "CarlitoBold";
