@@ -58,8 +58,7 @@ frameImage1.onload = function() {
 };
 backgroundImage.onload = function() {
     drawBackground();
-    drawFrame();
-    drawTexts();
+    updateForeground();
 };
 backgroundImage.crossOrigin = "anonymous";
 function drawFrame() {
@@ -72,23 +71,14 @@ function drawFrame() {
     }
 }
 function drawBackground() {
-    if(backgroundImage.src == "") {
-        drawBlack();
-    } else {
-        context.drawImage(backgroundImage,backgroundX,backgroundY,backgroundSize,backgroundSize);
-    }
-}
-function drawBlack() {
-    context.beginPath();
-	context.fillRect(0,0,frameWidth,frameHeight);
-	context.stroke();
+    context.drawImage(backgroundImage,backgroundX,backgroundY,backgroundSize,backgroundSize);
 }
 function backgroundUpdate() {
     var file = background.files[0];
     var url = window.URL || window.webkitURL;
     backgroundImage.src = url.createObjectURL(file);
 };
-function updateText() {
+function updateForeground() {
     drawFrame();
     drawTexts();
 }
@@ -103,11 +93,11 @@ function drawTexts() {
 
 function toofarChanged() {
     showTooFar = !showTooFar;
-    updateText();
+    updateForeground();
 }
 function statusBarChanged() {
     showStatusBar = !showStatusBar;
-    updateText();
+    updateForeground();
 }
 function backgroundChanged() {
     if(usingFrameOne) {
@@ -117,7 +107,7 @@ function backgroundChanged() {
     }
     usingFrameOne = !usingFrameOne;
     updateStatusBar();
-    updateText();
+    updateForeground();
 }
 function setDefaultFrameImages() {
     frameImage = frameImage1;
@@ -130,7 +120,7 @@ function setAlternativeFrameImages() {
 function toggleStatusBarType() {
     isiOSStatusBar = !isiOSStatusBar;
     updateStatusBar();
-    updateText();
+    updateForeground();
 }
 function updateStatusBar() {
     if(isiOSStatusBar) {
@@ -147,7 +137,7 @@ function updateStatusBar() {
     }
 }
 document.body.onload = function() {
-    updateText(); //in case custom font is still loading or not cached
+    updateForeground(); //in case custom font is still loading or not cached
 };
 frameImage1.src = "frame1.png";
 frameImage2.src = "frame2.png";
