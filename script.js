@@ -10,9 +10,9 @@ var toofarHeight = 75;
 var statusBarHeight = 40;
 
 //background sizing
-var backgroundSize = 582;
-var backgroundX = 85;
-var backgroundY = 358;
+var backgroundSize = 353;
+var backgroundX = 93;
+var backgroundY = 287;
 
 //text positioning
 var textX = 48;
