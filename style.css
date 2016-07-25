@@ -1,6 +1,9 @@
 p {
     font-family: "CarlitoRegular";
 }
+.carlitoBold {
+    font-family: "CarlitoBold";  
+}
 #canvas {
     height: 600px;
 }
