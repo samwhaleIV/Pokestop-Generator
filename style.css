@@ -7,11 +7,11 @@ p {
 #canvas {
     height: 600px;
     float: left;
+    margin-right: 20px;
 }
 #settingsAndInfo {
     width: 320px;
     float: left;
-    margin-left: 20px;
 }
 @font-face {
     font-family: "CarlitoBold";
