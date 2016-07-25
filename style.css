@@ -7,3 +7,15 @@ p {
 #canvas {
     height: 600px;
 }
+@font-face {
+    font-family: "CarlitoBold";
+    src: url('CarlitoBold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'CarlitoRegular';
+    src: url('CarlitoRegular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
