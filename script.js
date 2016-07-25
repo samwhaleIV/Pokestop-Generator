@@ -71,7 +71,24 @@ function drawFrame() {
     }
 }
 function drawBackground() {
-    context.drawImage(backgroundImage,backgroundX,backgroundY,backgroundSize,backgroundSize);
+    if(backgroundImage.width == backgroundImage.height) {
+        context.drawImage(backgroundImage,backgroundX,backgroundY,backgroundSize,backgroundSize);
+    } else {
+        var sourceX;
+        var sourceY;
+        var size;
+        if(backgroundImage.width > backgroundImage.height) {
+            sourceX = (backgroundImage.width - backgroundImage.height) / 2;
+            sourceY = 0;
+            size = backgroundImage.height;
+        } else {
+            sourceX = 0;
+            sourceY = (backgroundImage.height - backgroundImage.width) / 2;
+            size = backgroundImage.width;         
+        }
+        context.drawImage(backgroundImage,sourceX,sourceY,size,size,backgroundX,backgroundY,backgroundSize,backgroundSize);
+    }
+
 }
 function backgroundUpdate() {
     var file = background.files[0];
